@@ -1,7 +1,7 @@
 {
     "name": "anfis",
-    "version": "0.0.1",
-    "description": "uc front-end integrated solution",
+    "version": "0.0.2",
+    "description": "angularjs+scrat front-end integrated solution",
     "main": "index.js",
     "preferGlobal": true,
     "bin": {

@@ -1,5 +1,5 @@
 var fis = module.exports = require('fis');
-fis.require.prefixes = ['anfis', 'fis'];
+fis.require.prefixes = ['scrat', 'fis'];
 fis.cli.name = 'anfis';
 fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 fis.cli.version = require('./version.js');
