@@ -1,7 +1,7 @@
 var plugins = {
     define : require('../plugins/postprocessor/define.js'),
-    uaeConf : require('../plugins/postpackager/uae-conf.js'),
-    frameworkConf : require('../plugins/postpackager/framework-conf.js')
+    uaeConf : require('../plugins/prepackager/uae-conf.js'),
+    frameworkConf : require('../plugins/prepackager/framework-conf.js')
 };
 module.exports = {
     urlPrefix : '',
@@ -20,12 +20,10 @@ module.exports = {
             js: 'jshint'
         },
         postprocessor : {
-            js : plugins.define
+            js : [ plugins.define ]
         },
-        prepackager : [
-            plugins.uaeConf,
-            plugins.frameworkConf
-        ]
+        prepackager : [ plugins.uaeConf ],
+        postpackager: [ plugins.frameworkConf ]
     },
     roadmap : {
         ext : {
@@ -153,6 +151,14 @@ module.exports = {
                     port : 11211
                 }
             ]
+        }
+    },
+    settings: {
+        spriter: {
+            csssprites: {
+                htmlUseSprite: true,
+                styleReg: /(<style(?:(?=\s)[\s\S]*?["'\s\w\/\-]>|>))([\s\S]*?)(<\/style\s*>|$)/ig
+            }
         }
     }
 };
